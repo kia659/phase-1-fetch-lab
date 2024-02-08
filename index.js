@@ -1,7 +1,13 @@
 function fetchBooks() {
-  // To pass the tests, don't forget to return your fetch!
-  
+  return fetch('https://anapioficeandfire.com/api/books')
+    // Step 3: Convert response to JSON
+    .then(response => response.json())
+    // Step 4: Handle JSON data and call renderBooks
+    .then(jsonData => renderBooks(jsonData));
 }
+
+  // To pass the tests, don't forget to return your fetch!
+
 
 function renderBooks(books) {
   const main = document.querySelector('main');
